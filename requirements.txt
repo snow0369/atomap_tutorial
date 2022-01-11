@@ -1,0 +1,8 @@
+atomap~=0.3.1
+numpy~=1.20.3
+image
+pillow~=9.0.0
+hyperspy_gui_ipywidgets
+hyperspy_gui_traitsui
+
+matplotlib~=3.4.3
