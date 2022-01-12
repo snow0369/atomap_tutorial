@@ -4,5 +4,6 @@ image
 pillow~=9.0.0
 hyperspy_gui_ipywidgets
 hyperspy_gui_traitsui
-
+imagecodecs
 matplotlib~=3.4.3
+opencv-python
