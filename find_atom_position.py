@@ -9,6 +9,7 @@ import numpy as np
 import atomap.dummy_data as dummy_data
 import cv2
 # from PIL import Image
+from convert_tiff_to_grayscale import convert_tiff_to_grayscale
 
 matplotlib.rcParams['backend'] = 'nbagg'
 
@@ -17,12 +18,8 @@ if __name__ == "__main__":
     filename = 'image/1716_DPC_12.0_Mx_DF4_crop.tif'
 
     # img = Image.open(filename).convert("LA")
-    sp = filename.split('.')
-    new_filename = ".".join(sp[:-1]) + "_GS." + sp[-1]
-    if not os.path.isfile(new_filename):
-        img = cv2.imread(filename)
-        cv2.imwrite(new_filename, img[:, :, 1])
-    filename = new_filename
+    filename = convert_tiff_to_grayscale(filename)
+
     img = hs.load(filename, convert_units=True)
 
     img.axes_manager['width'].units = 'nm'
